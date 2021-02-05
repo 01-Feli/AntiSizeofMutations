@@ -49,11 +49,10 @@ namespace Feli.AntiSizeofMutations
                     {
                         var instruction = method.Body.Instructions[i];
 
-                        Console.WriteLine(instruction.OpCode.ToString());
-
                         // check if it is sizeof opCode
                         if (instruction.OpCode != OpCodes.Sizeof)
                             continue;
+
                         //gets the value of the sizeof using the operand type
                         int value = GetSize(instruction.Operand.ToString());
 
